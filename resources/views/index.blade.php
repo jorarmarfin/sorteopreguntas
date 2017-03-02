@@ -11,7 +11,7 @@
             <div class="portlet-title">
                 <div class="caption">
                     <i class="fa fa-table"></i>
-                    Lista de Alumnos
+                    Sorteo de Preguntas
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse"> </a>
