@@ -5,3 +5,5 @@ Route::get('/', [
  'as' => 'home.index'
 ]);
 
+Route::get('cleandatabase','HomeController@clean')->name('clean.database');
+

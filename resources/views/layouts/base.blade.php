@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title>@yield('title','Institucion Educativa Milagrosa Virgen de Chapi')</title>
+	<title>@yield('title','UNIVERSIDAD NACIONAL INGENIERIA | Sorteo Preguntas')</title>
     <!-- BEGIN PAGE FIRST SCRIPTS -->
     @yield('js-plugins-first')
     <!-- END PAGE FIRST SCRIPTS -->
@@ -59,7 +59,7 @@
     </div>
 	<!-- BEGIN CORE PLUGINS -->
 	@include('layouts.partials.js-core')
-    @yield('js-plugins')
+    @yield('plugins-js')
     <!-- END CORE PLUGINS -->
     <!-- BEGIN THEME GLOBAL SCRIPTS -->
     <script src={{asset("assets/global/scripts/app.min.js")}} type="text/javascript"></script>

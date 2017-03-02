@@ -20,8 +20,7 @@ class Catalogo extends Model
 	public function scopeCombo($cadenaSQL,$NameTable){
 		$idtable=$this->Maestro($NameTable);
 		return $cadenaSQL->where('idtable',$idtable)
-						 ->where('activo',1)
-						 ->orderBy('nombre');
+						 ->where('activo',1);
 	}
 	#--------------------------------------------------------------------
 	public function scopeIdCatalogo($cadenaSQL,$NameTable,$NameSubTable){

@@ -23,6 +23,15 @@ class CatalogoTableSeeder extends Seeder
         /**
          * Categoria de prguntas
          */
+        Catalogo::create(['idtable' => 2,'iditem' => 1, 'codigo' => 'RV','nombre' => 'Razonamiento Verbal','descripcion'=>'Razonamiento verbal','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 2,'iditem' => 2, 'codigo' => 'RM','nombre' => 'Razonamiento Matemático','descripcion'=>'Razonamiento Matemático','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 2,'iditem' => 3, 'codigo' => 'PE','nombre' => 'Procedimiento Electoral','descripcion'=>'Procedimiento Electoral','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 2,'iditem' => 4, 'codigo' => 'PO','nombre' => 'Planes Operativos','descripcion'=>'Planes operativos','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 2,'iditem' => 5, 'codigo' => 'CP','nombre' => 'Contratación Personal','descripcion'=>'Contratación Personal','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 2,'iditem' => 6, 'codigo' => 'GP','nombre' => 'Gestión Pública','descripcion'=>'Gestión Pública','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 2,'iditem' => 7, 'codigo' => 'GPO','nombre' => 'Gestión de Procesos','descripcion'=>'Gestión de Procesos','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 2,'iditem' => 8, 'codigo' => 'CE','nombre' => 'Contratación del Estado','descripcion'=>'Contratación del Estado','valor'=> null,'activo'=>true]);
+        Catalogo::create(['idtable' => 2,'iditem' => 9, 'codigo' => 'LOE','nombre' => 'Ley Orgánica de Elecciones','descripcion'=>'Ley Orgánica de Elecciones','valor'=> null,'activo'=>true]);
 
 
     }

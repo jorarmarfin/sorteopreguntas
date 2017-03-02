@@ -15,7 +15,9 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->make('view')->composer(
-            ['admin.users.index','admin.users.edit','admin.users.delete'],
+            ['admin.users.index','admin.users.edit','admin.users.delete',
+            'sorteo.base','sorteo.estructura'
+            ],
             ControlSelectData::class
             );
     }

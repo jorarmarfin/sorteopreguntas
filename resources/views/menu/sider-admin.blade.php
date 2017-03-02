@@ -26,6 +26,27 @@
             </a>
         </li>
         <li class="nav-item  ">
+            <a href="{{ route('sorteo.base.index') }}" class="nav-link nav-toggle">
+                <i class="icon-users"></i>
+                <span class="title">Base de Preguntas</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class="nav-item  ">
+            <a href="{{ route('sorteo.estructura.index') }}" class="nav-link nav-toggle">
+                <i class="icon-users"></i>
+                <span class="title">Estructura de sorteo</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class="nav-item  ">
+            <a href="{{ route('sorteo.index') }}" class="nav-link nav-toggle">
+                <i class="icon-users"></i>
+                <span class="title">Sorteo</span>
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class="nav-item  ">
             <a href="javascript:;" class="nav-link nav-toggle">
                 <i class="icon-diamond"></i>
                 <span class="title">Catalogo</span>
