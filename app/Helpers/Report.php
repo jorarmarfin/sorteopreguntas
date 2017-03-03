@@ -16,8 +16,13 @@ if (! function_exists('Reportheader')) {
         PDF::SetFont('helvetica','B',9);
         PDF::Cell(150,5,'OFICINA CENTRAL DE ADMISIÓN',0,2,'L');
         PDF::SetXY(29,17);
+        PDF::SetFont('helvetica','B',9);
+        PDF::Cell(150,5,'UNIDAD DE SISTEMAS',0,2,'L');
+        #
+        PDF::SetXY(29,21);
         PDF::SetFont('helvetica','',9);
-		PDF::Cell(150,5,'EXAMEN ONPE',0,2,'L');
+		PDF::Cell(150,5,'EVALUACION DE LA PRUEBA DE CONOCIMIENTO PARA LOS JEFES DE ODPE 2017',0,2,'L');
+
         PDF::SetXY(29,20);
 		PDF::Cell(150,5,'',0,0,'L');
         #   NUMERO DE PAGINA

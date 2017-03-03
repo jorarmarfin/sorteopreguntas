@@ -2,14 +2,9 @@
 
 @section('content')
 
+{!!Form::boton('Reiniciar sorteo',route('reinicia.sorteo'),'green-meadow','fa fa-cogs')!!}
+
 @stop
-
-
-
-
-
-
-
 
 
 

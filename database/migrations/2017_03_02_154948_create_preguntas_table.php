@@ -18,7 +18,7 @@ class CreatePreguntasTable extends Migration
             $table->string('nombre',100)->nullable();
             $table->mediumtext('descripcion')->nullable();
             $table->boolean('sorteado')->default(false);
-            $table->integer('orden')->nullable();
+            $table->integer('orden')->default(0);
             $table->integer('idcategoria')->nullable();
             $table->timestamps();
             $table->foreign('idcategoria')->references('id')->on('catalogo');

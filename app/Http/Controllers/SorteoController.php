@@ -36,6 +36,11 @@ class SorteoController extends Controller
             Pregunta::whereIn('id',$preguntas_sorteadas)->update(['sorteado'=>true]);
 
         });
+        $preguntas = Pregunta::where('sorteado',true)->inRandomOrder()->get();
+        $preguntas = $preguntas->each(function($item,$key){
+            Pregunta::where('id',$item->id)->update(['orden'=>$key+1]);
+        });
+
         Alert::success('Sorteo realizado');
         return redirect()->route('sorteo.index');
     }
@@ -60,9 +65,10 @@ class SorteoController extends Controller
      */
     public function getpdf()
     {
-        PDF::SetTitle('titulo');
+        PDF::SetTitle('Sorteo de Preguntas');
         PDF::AddPage('U','A4');
         Reportheader();
+        Reportfooter();
 
         $this->TituloColumnas();
 
@@ -70,38 +76,52 @@ class SorteoController extends Controller
 
         $data = Pregunta::where('sorteado',true)
                             ->orderBy('idcategoria')
-                            ->orderBy('nombre')
+                            ->orderBy('orden')
                             ->get();
         $altodecelda=5;
         $incremento = 35;
+        $numMaxLineas = 47;
         $x = 25;
         $i = 0;
         $j = 1;
         $k = 1;
         while ($i < count($data)) {
+            if($k%$numMaxLineas==0 && $k!=0){
+                PDF::AddPage('U', 'A4');
+                Reportheader();
+                Reportfooter();
+                $this->TituloColumnas();
+                $j=1;
+            }
+
+            PDF::SetXY($x+10, $j*$altodecelda+$incremento);
+            PDF::SetFont('courier', '', 11);
+            PDF::Cell(130, 5, '', 'B', 1, 'C');
+
             PDF::SetXY($x+10, $j*$altodecelda+$incremento);
             PDF::SetFont('courier', '', 11);
             PDF::Cell(10, 5, $k, 0, 1, 'C');
 
             PDF::SetXY($x+23, $j*$altodecelda+$incremento);
             PDF::SetFont('courier', '', 11);
-            PDF::Cell(30, 5, $data[$i]['nombre'], 0, 1, 'C');
+            PDF::Cell(30, 5, $data[$i]['nombre'], 0, 1, 'L');
 
             PDF::SetXY($x+53, $j*$altodecelda+$incremento);
             PDF::SetFont('courier', '', 11);
-            PDF::Cell(80, 5, $data[$i]['categoria'], 0, 1, 'C');
+            PDF::Cell(80, 5, $data[$i]['categoria'], 0, 1, 'L');
 
             $i++;
             $k++;
             $j++;
         };
+
         PDF::Output(public_path('storage/tmp/').'pregutnas_sorteadas.pdf','FI');
     }
     function TituloColumnas(){
         $y=35;
         $x=25;
         #TITULO REPORTE
-        PDF::SetXY(35,24);
+        PDF::SetXY(35,27);
         PDF::SetTextColor(255,0,0);
         PDF::SetFont('helvetica','B',12);
         PDF::Cell(150,5,"SORTEO DE PREGUNTAS",0,2,'C');
